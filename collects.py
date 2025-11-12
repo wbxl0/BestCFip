@@ -10,10 +10,12 @@ sources = {
     'https://ipdb.api.030101.xyz/?type=bestcf': 'IPDB',
     'https://www.wetest.vip/page/cloudflare/address_v6.html': 'WeTestV6',
     'https://ipdb.api.030101.xyz/?type=bestcfv6': 'IPDBv6',
-    'https://raw.githubusercontent.com/crow1874/CF-DNS-Clone/refs/heads/main/CloudFlareYes.txt': 'CFYes',
+    'https://cf.090227.xyz/CloudFlareYes': 'CFYes',
     'https://ip.haogege.xyz': 'HaoGG',
-    'https://raw.githubusercontent.com/crow1874/CF-DNS-Clone/refs/heads/main/vps789.txt': 'VPS',
-    'https://www.wetest.vip/page/cloudflare/address_v4.html': 'WeTest'
+    'https://vps789.com/openApi/cfIpApi': 'VPS',
+    'https://www.wetest.vip/page/cloudflare/address_v4.html': 'WeTest',
+    'https://addressesapi.090227.xyz/ct': 'CMLiuss',
+    'https://addressesapi.090227.xyz/cmcc-ipv6': 'CMLiussv6'
 }
 
 PORT = '443'  # 目标端口号
@@ -52,7 +54,7 @@ for url, shortname in sources.items():
             text = content
         else:
             soup = BeautifulSoup(content, 'html.parser')
-            elements = soup.find_all('tr') or soup.find_all('li')
+            elements = soup.find_all('tr') or soup.find_all('li') or soup
             text = '\n'.join(el.get_text() for el in elements)
 
         # IPv4 提取
@@ -83,13 +85,13 @@ for url, shortname in sources.items():
 
 # 写入 ipv4.txt（仅IPv4）
 with open('ipv4.txt', 'w') as f4:
-    f4.write(f"0.0.0.0:000#Updated{timestamp}\n")
+    f4.write(f"ipv4.list.updated.at:000#Upd{timestamp}\n")
     for ip in sorted(ipv4_dict):
         f4.write(f"{ip}#{ipv4_dict[ip]}\n")
 
 # 写入 ipv6.txt（仅IPv6）
 with open('ipv6.txt', 'w') as f6:
-    f6.write(f"0.0.0.0:000#Updated{timestamp}\n")
+    f6.write(f"ipv6.list.updated.at:000#Upd{timestamp}\n")
     for ip in sorted(ipv6_dict):
         f6.write(f"{ip}#{ipv6_dict[ip]}\n")
 
