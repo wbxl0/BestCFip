@@ -15,6 +15,9 @@ https://ghfast.top/https://github.com/joname1/BestCFip/blob/main/ipv4.txt
 ```shell
 https://raw.gitmirror.com/joname1/BestCFip/refs/heads/main/ipv4.txt
 ```
+```shell
+https://raw.githubusercontent.com/joname1/BestCFip/refs/heads/main/ipv4.txt
+```
 
 
 * ``ipv6.txt``
@@ -28,3 +31,4 @@ https://raw.gitmirror.com/joname1/BestCFip/refs/heads/main/ipv6.txt
 https://raw.githubusercontent.com/joname1/BestCFip/refs/heads/main/ipv6.txt
 
 ```
+
